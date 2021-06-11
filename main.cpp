@@ -84,22 +84,52 @@ class cBall{
         }
 
 };
+//the player
+class cPaddle{
+private: 
+    int x,y;
+    int originX, originY;
+public:
+    cPaddle(){
+        x = y = 0;
+    }
+    cPaddle(int posX, int posY) : cPaddle(){
+        originX = posX;
+        originY = posY;
+        x = posX;
+        y = posY;
+    }
+    void Reset(){
+        x = originX;
+        y = originY;
+    }
+    int getX(){
+        return x;
+    }
+    int getY(){
+        return y;
+    }
+    void moveUp(){
+        y--;
+    }
+    void moveDown(){
+        y++;
+    }
+    friend ostream & operator<<(ostream & o, cPaddle c){
+        o << "Paddle ("<<c.x<<","<<c.y<<")";
+        return o;
+    }
+};
 int main(){
 
-    cBall c(0,0);
-    cout<<c<<endl;
-    //direction of the ball changes
-    c.randomDirection();
-    c.Move();
-    cout<<c<<endl;
-
-    c.randomDirection();
-    c.Move();
-    cout<<c<<endl;
-
-    c.randomDirection();
-    c.Move();
-    cout<<c<<endl;
+    cPaddle p1(0,0);
+    cPaddle p2(10,0);
+    cout<<p1<<endl;
+    cout<<p2<<endl;
+    p1.moveUp();
+    p2.moveDown();
+    cout<<p1<<endl;
+    cout<<p2<<endl;
 
     return 0;
 }
