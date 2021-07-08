@@ -180,6 +180,68 @@ class cGameManager{
             player1 -> Reset();
             player2 -> Reset();
         }
+
+        void Draw() {
+            //clears the screen
+            system("cls");
+
+            //print the walls of the game
+            for (int i = 0; i < width + 2; i++) {
+                cout << "#";
+            }
+            cout << endl;
+
+            //i is y-coordinate
+            for (int i = 0; i < height; i++) {
+                //j is x-coordinate
+                for (int j = 0; j < width; j++) {
+
+                    int ballx = ball->getX();
+                    int bally = ball->getY();
+
+                    int player1x = player1->getX();
+                    int player1y = player1->getY();
+
+                    int player2x = player2->getX();
+                    int player2y = player2->getY();
+
+                    if (j == 0) {
+                        cout << "#";
+                    }
+
+                    //Prints content of the map and position of where players and ball are
+                    if (ballx == j && bally == i) {
+                        //prints the ball
+                        cout << "O";
+                    }
+                    else if (player1x == j && player1y = i) {
+                        //prints player 1
+                        cout << "/";
+                    }
+
+                    else if (player2x == j && player2y = i) {
+                        //prints player 2
+                        cout << "\";
+                    }
+                    
+                    else {
+                        cout << " ";
+                    }
+
+                    if (j == width - 1) {
+                        cout << "#";
+                    }
+                }
+
+
+            }
+
+            for (int i = 0; i < width + 2; i++) {
+                cout << "#";
+            }
+            cout << endl;
+
+        }
 };
 int main(){
 
