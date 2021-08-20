@@ -268,6 +268,49 @@ class cGameManager{
             cout << endl;
 
         }
+        void Input(){
+            ball->Move(); //Moves the ball
+
+            //Stores the coordinates
+            int ballx = ball->getX();
+            int bally = ball->getY();
+            int player1x = player1->getX();
+            int player1y = player1->getY();
+            int player2x = player2->getX();
+            int player2y = player2->getY(); 
+
+            // If the keyboard is pressed get the current character
+            if(_kbhit()){
+                char current = _getch();
+                if(current == up1){
+                    if(player1y > 0){
+                        player1->moveUp();
+                    }
+                }
+                if(current == up2){
+                    if(player2y > 0){
+                        player2->moveUp();
+                    }
+                }
+                if(current == down1){
+                    if(player1y + 4 < height){
+                        player1->moveDown();
+                    }
+                }
+                if(current == down2){
+                    if(player2y + 4 < height){
+                        player2->moveDown();
+                    }
+                }
+                if(ball->getDirection() == STOP){
+                    ball -> randomDirection();
+                }
+                if(current == 'q'){
+                    quit = true;
+                }
+            }           
+
+        }
 };
 int main(){
 
