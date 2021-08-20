@@ -206,7 +206,7 @@ class cGameManager{
                     int player2y = player2->getY();
 
                     if (j == 0) {
-                        cout << "#";
+                        cout << "\xB2";
                     }
 
                     //Prints content of the map and position of where players and ball are
@@ -214,22 +214,48 @@ class cGameManager{
                         //prints the ball
                         cout << "O";
                     }
-                    else if (player1x == j && player1y = i) {
+                    else if (player1x == j && player1y == i) {
                         //prints player 1
-                        cout << "/";
+                        cout << "\xDB";
                     }
 
-                    else if (player2x == j && player2y = i) {
+                    else if (player2x == j && player2y == i) {
                         //prints player 2
-                        cout << "\";
+                        cout << "\xDB";
                     }
-                    
+
+                    else if (player1x == j && player1y + 1  == i) {
+                        //prints player 1
+                        cout << "\xDB";
+                    }
+                    else if (player1x == j && player1y + 2 == i) {
+                        //prints player 1
+                        cout << "\xDB";
+                    }
+                    else if (player1x == j && player1y + 3 == i) {
+                        //prints player 1
+                        cout << "\xDB";
+                    }
+
+                    else if (player2x == j && player2y + 1 == i) {
+                        //prints player 2
+                        cout << "\xDB";
+                    }
+                    else if (player2x == j && player2y + 2 == i) {
+                        //prints player 2
+                        cout << "\xDB";
+                    }
+                    else if (player2x == j && player2y + 3 == i) {
+                        //prints player 2
+                        cout << "\xDB";
+                    }
+                     
                     else {
                         cout << " ";
                     }
 
                     if (j == width - 1) {
-                        cout << "#";
+                        cout << "\xB2";
                     }
                 }
 
